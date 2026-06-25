@@ -1,0 +1,308 @@
+/* =============================================================
+   LOOPI DOO — Logo Design Proposal
+   Editable HTML/CSS export
+   Images live in /img (Regular.png, Scissors.png, Shiny.png,
+   Bubble.png, Green.png, White.png)
+   ============================================================= */
+
+/* ---- Design tokens ---------------------------------------- */
+:root {
+  --sage:        #88A878;  /* primary brand green   */
+  --deep-sage:   #5E7A46;  /* accent / emphasis     */
+  --cream:       #FBF7EE;  /* page surface          */
+  --cream-card:  #F3EEDF;  /* tinted card           */
+  --page-bg:     #ECE4D3;  /* outside the document  */
+  --ink:         #3C3A30;  /* headings              */
+  --body:        #56534A;  /* paragraphs            */
+  --muted:       #908C7E;  /* captions              */
+  --border:      #EFE9DA;  /* card outlines         */
+  --maxw:        8.5in;    /* document width        */
+}
+
+/* ---- Reset ------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+
+body {
+  background: var(--page-bg);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Document shell --------------------------------------- */
+.doc {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  background: var(--cream);
+  box-shadow: 0 1px 40px rgba(80, 70, 40, 0.10);
+}
+
+/* ---- Shared text styles ----------------------------------- */
+.eyebrow {
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--sage);
+  margin-bottom: 6px;
+}
+.h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.h2 {
+  margin: 0 0 12px;
+  font-weight: 700;
+  font-size: 23px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.lead {
+  margin: 24px 0 0;
+  max-width: 6.4in;
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--body);
+}
+.body {
+  margin: 0;
+  max-width: 6.2in;
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: var(--body);
+}
+strong { color: var(--deep-sage); }
+
+/* ---- Section spacing -------------------------------------- */
+.section { padding: 40px 56px; }
+.section--intro { padding: 56px 56px 12px; }
+.section--last  { padding: 40px 56px 8px; }
+
+/* ---- Cover ------------------------------------------------- */
+.cover {
+  position: relative;
+  background: var(--sage);
+  border-radius: 0 0 34px 34px;
+  padding: 60px 56px 56px;
+  overflow: hidden;
+}
+.cover__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+}
+.cover__blob--1 { width: 360px; height: 360px; top: -150px; right: -90px; }
+.cover__blob--2 { width: 200px; height: 200px; bottom: -90px; left: -60px; background: rgba(255,255,255,0.07); }
+.cover__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.cover__kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.88);
+}
+.cover__kicker::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 2px;
+}
+.cover__logo {
+  background: #fff;
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 14px 36px rgba(50, 60, 40, 0.18);
+  align-self: flex-start;
+  width: min(360px, 70%);
+}
+.cover__title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-wrap: balance;
+}
+.cover__sub {
+  margin: 0;
+  max-width: 460px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ---- Numbered concept blocks ------------------------------ */
+.concept {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 26px;
+  align-items: start;
+}
+.concept__num {
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--sage);
+  line-height: 1;
+}
+
+/* ---- Hero logo card --------------------------------------- */
+.hero-card {
+  margin: 8px 56px 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-card img { width: 70%; max-width: 420px; }
+
+/* ---- Background versions ---------------------------------- */
+.bg-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.bg-grid figure { margin: 0; }
+.swatch {
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swatch--green { background: var(--sage); }
+.swatch--white { background: #fff; border: 1px solid var(--border); }
+.swatch img { width: 78%; max-width: 300px; }
+.caption {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ---- Optional variations ---------------------------------- */
+.var-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+.var-card {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+  text-align: center;
+}
+.var-card img { width: 100%; }
+.var-card figcaption { margin-top: 14px; }
+.var-card .name {
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+}
+.var-card .note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.section-lead {
+  margin: 0 0 24px;
+  max-width: 6.2in;
+  font-size: 16.5px;
+  line-height: 1.72;
+  color: var(--body);
+}
+
+/* ---- Typography specimen ---------------------------------- */
+.type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.type-card {
+  background: var(--cream-card);
+  border-radius: 20px;
+  padding: 32px 30px;
+}
+.type-card .aa     { font-size: 56px; line-height: 1; }
+.type-card .name   { margin-top: 16px; font-size: 24px; color: var(--ink); }
+.type-card .note   { margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: #6B6859; }
+/* Ranchers specimen */
+.type-card--ranchers .aa   { font-family: 'Ranchers', cursive; color: var(--sage); }
+.type-card--ranchers .name { font-family: 'Ranchers', cursive; font-size: 26px; }
+/* Outfit specimen */
+.type-card--outfit .aa   { font-family: 'Outfit', sans-serif; font-weight: 600; color: var(--deep-sage); }
+.type-card--outfit .name { font-family: 'Outfit', sans-serif; font-weight: 600; }
+
+/* ---- Closing band ----------------------------------------- */
+.cta {
+  margin: 44px 56px 56px;
+  background: var(--sage);
+  border-radius: 28px;
+  padding: 48px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  top: -120px;
+  left: -60px;
+}
+.cta__heart { position: relative; font-size: 30px; color: #fff; line-height: 1.3; }
+.cta__line {
+  position: relative;
+  margin: 10px auto 0;
+  max-width: 460px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+/* ---- Responsive (mobile) ---------------------------------- */
+@media (max-width: 640px) {
+  .doc { box-shadow: none; }
+  .cover { border-radius: 0 0 24px 24px; padding: 48px 24px 44px; }
+  .section, .section--intro, .section--last { padding-left: 24px; padding-right: 24px; }
+  .concept { grid-template-columns: 1fr; gap: 6px; }
+  .hero-card { margin-left: 24px; margin-right: 24px; }
+  .bg-grid, .var-grid, .type-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cta { margin: 36px 0 0; border-radius: 0; padding: 48px 24px; }
+}
+
+/* ---- Print (PDF) ------------------------------------------ */
+@page { size: letter; margin: 0; }
+@media print {
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { background: var(--cream); }
+  .doc { max-width: none; margin: 0; box-shadow: none; }
+  .section, figure, .hero-card, .cta, .type-card { break-inside: avoid; }
+  .h1, .h2 { break-after: avoid; }
+}
